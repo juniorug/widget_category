@@ -28,6 +28,8 @@ class Api {
   ///
   /// This API doesn't have a key but often, APIs do require authentication
   final String _url = 'flutter.udacity.com';
+  //USE THIS URL TO TEST CONNECTION ERROR:
+  //final String _url = 'flutter.udacity.com2';
 
   /// Gets all the units and conversion rates for a given category.
   ///
@@ -70,7 +72,7 @@ class Api {
     try {
       final httpRequest = await _httpClient.getUrl(uri);
       final httpResponse = await httpRequest.close();
-      if (httpResponse.statusCode != HttpStatus.OK) {
+      if (httpResponse.statusCode != HttpStatus.ok) {
         return null;
       }
       // The response is sent as a Stream of bytes that we need to convert to a
